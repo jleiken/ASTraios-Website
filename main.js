@@ -20,9 +20,8 @@ $(document).ready(() => {
     stars.hide();
     extra.hide();
     book.hide();
-    main.hide(); // comment out for prod
     finalize.hide();
-    //bookContent.hide();
+    bookContent.hide();
 
     $("#datetimepicker").datetimepicker();
 
