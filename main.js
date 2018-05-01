@@ -9,7 +9,7 @@ $(document).ready(() => {
     let stars = $("#star-picker");
     let extra = $("#more-info");
     let go = $("#look-button");
-    let back = $("#back-button");
+    let back = $(".back-button");
     let book = $("#book-button");
     let fov = $("#fov-picker");
     let exposure = $("#exposure-picker");
@@ -23,6 +23,8 @@ $(document).ready(() => {
     main.hide(); // comment out for prod
     finalize.hide();
     //bookContent.hide();
+
+    $("#datetimepicker").datetimepicker();
 
     // event handlers
     cats.on('change', () => {
@@ -51,11 +53,13 @@ $(document).ready(() => {
     go.on('click', () => {
         main.hide();
         finalize.fadeIn();
+        bookContent.hide();
     });
 
     back.on('click', () => {
         main.show();
         finalize.hide();
+        bookContent.hide();
     });
 
     function checkRadios() {
