@@ -1,0 +1,138 @@
+<DOCTYPE !<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Control ASTraios</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img src="assets/logo.png" width="50px"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./about.html">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Body -->
+    <br><br>
+    <div class="container">
+        <div id="main-content" class="card">
+            <div class="card-body">
+                <h5 class="card-title">Where do you want to look?</h5>
+
+                <select class="custom-select" id="category-picker">
+                    <option selected>Choose...</option>
+                    <option value="0">The planets</option>
+                    <option value="1">The moons</option>
+                    <option value="2">The stars</option>
+                </select>
+            
+                <div id="more-info">
+                    <br>
+                    <select class="custom-select" id="planet-picker">
+                        <option value="0">Mercury</option>
+                        <option value="1">Venus</option>
+                        <option value="2" selected>Earth</option>
+                        <option value="3">Mars</option>
+                        <option value="4">Jupiter</option>
+                        <option value="5">Saturn</option>
+                        <option value="6">Uranus</option>
+                        <option value="7">Neptune</option>
+                    </select>
+
+                    <select class="custom-select" id="moon-picker">
+                        <option value="0">Moon</option>
+                        <option value="1">Phobos</option>
+                        <option value="2">Deimos</option>
+                        <option value="3">Titan</option>
+                        <option value="4">Enceladus</option>
+                        <option value="5">Io</option>
+                        <option value="6">Europa</option>
+                    </select>
+
+                    <select class="custom-select" id="star-picker">
+                        <option value="0">Proxima Centauri</option>
+                        <option value="1">Alpha Centauri A</option>
+                        <option value="2">Tau Ceti</option>
+                    </select>
+
+                    <br><br>
+                    <button id="look-button" type="button" class="btn btn-success">Look!</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="finalize-content" class="card">
+            <div class="card-header"><b>Viewing Details</b></div>
+            <div class="card-body">
+                <div class="card-deck">
+                    <div class="card border-info">
+                        <div class="card-header">Field of View</div>
+                        <div class="card-body">
+                            <form id="fov-picker">
+                                <input type="radio" name="fov" value="0"><b>Zoom View - 0.5º</b> Best for objects that have a small angular size
+                                <br><br>
+                                <input type="radio" name="fov" value="1"><b>Normal View - 1º</b> Good setting for most objects
+                                <br><br>
+                                <input type="radio" name="fov" value="2"><b>Wide View - 10º</b> Best for objects that cover a wide area of the sky
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="card border-warning">
+                        <div class="card-header">Exposure Time</div>
+                        <div class="card-body">
+                            <form id="exposure-picker">
+                                <input type="radio" name="exposure" value="0"><b>0.1 seconds</b>
+                                <br><br>
+                                <input type="radio" name="exposure" value="1"><b>1 second</b>
+                                <br><br>
+                                <input type="radio" name="exposure" value="2"><b>30 seconds</b>
+                                <br><br>
+                                <input type="radio" name="exposure" value="3"><b>60 seconds</b>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card-footer row justify-content-between">
+                <div class="col">
+                    <button id="back-button" type="button" class="btn btn-danger">Back</button>
+                </div>
+                <div class="col text-right">
+                    <button id="book-button" type="button" class="btn btn-success">Book</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="book-content" class="card">
+            <div class="card-header"><b>Book your viewing time</b></div>
+            <div class="card-body">
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+</html>
