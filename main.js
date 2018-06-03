@@ -13,6 +13,8 @@ $(document).ready(() => {
     let book = $("#book-button");
     let fov = $("#fov-picker");
     let exposure = $("#exposure-picker");
+    let datetime = $("#datetimepicker");
+    let pay = $("#pay-button")
     
     // hiding setup
     planets.hide();
@@ -23,7 +25,7 @@ $(document).ready(() => {
     finalize.hide();
     bookContent.hide();
 
-    $("#datetimepicker").datetimepicker();
+    datetime.datetimepicker();
 
     // event handlers
     cats.on('change', () => {
@@ -84,5 +86,13 @@ $(document).ready(() => {
         finalize.hide();
         bookContent.fadeIn();
     });
+
+    datetime.on('change', () => {
+        if (datetime.val()) {
+            pay.show();
+        } else {
+            pay.hide();
+        }
+    })
 });
 
